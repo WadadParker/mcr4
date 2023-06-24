@@ -1,0 +1,41 @@
+.icons-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    padding: 1rem;
+}
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    margin-left: 5rem;
+    height: 100vh;
+}
+.icon {
+    font-size: 1.3rem;
+    margin: 0.5rem
+}
+.icons-container label {
+    justify-self: start;
+    align-self: center;
+    font-size: 1.4rem;
+}
+.sidebar-footer {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    border: 1px solid black;
+    padding: 0.5rem 1rem;
+    width: 70%;
+    border-radius: 1rem;
+    margin-top: auto;
+}
+.sidebar-footer img {
+    border-radius: 50%;
+}
+.sidebar-footer main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin: 1rem;
+}

@@ -6,11 +6,17 @@ import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter } from 'react-router-dom';
 
+import { PostContext,PostProvider } from './context/PostContext';
+
+export {PostContext};
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <PostProvider>
+        <App />
+      </PostProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
