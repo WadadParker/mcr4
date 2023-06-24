@@ -3,7 +3,7 @@ import "./sortBar.css";
 export const SortBar=()=>
 {
     return (
-        <div>
+        <div className="sortbar-container">
             <label htmlFor="sort">Sort By</label>
             <select>
                 <option>Latest Post</option>

@@ -7,7 +7,6 @@ export const SideBar=()=>
 {
     return (
         <div className="sidebar-container">
-            <h1>MyForum</h1>
             <main className="icons-container">
             <FontAwesomeIcon className="icon" icon={faHouse} />
             <label>Home</label>

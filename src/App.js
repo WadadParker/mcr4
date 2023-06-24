@@ -8,7 +8,9 @@ import { CommentPage } from './pages/commentPage/CommentPage';
 function App() {
   return (
     <div className="App">
-
+      <nav className='nav'>
+        <h1 className='nav-header' >MyForum</h1>
+      </nav>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path="/post/:postId" element={<CommentPage />} />

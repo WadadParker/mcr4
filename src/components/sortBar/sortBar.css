@@ -1,0 +1,7 @@
+.sortbar-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    margin-left: auto;
+    margin-right: 5rem;
+}
