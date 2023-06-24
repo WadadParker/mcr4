@@ -9,14 +9,14 @@ import {PostContext} from "../../context/PostContext";
 
 export const Home=()=>
 {
-    const {state:{allPosts}}=useContext(PostContext);
+    const {state:{allPosts}, sortPosts}=useContext(PostContext);
     return (
         <div className="home-container">
             <SideBar />
             <main>
             <h1>Latest Posts</h1>
             <ul>
-                {allPosts.map(item=>
+                {sortPosts().map(item=>
                     (
                         <li className="list-item-container">
                             <Post post={item}/>

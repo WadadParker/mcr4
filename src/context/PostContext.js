@@ -40,6 +40,12 @@ export const PostProvider=({children})=>
                     return item;
                 })
                 return {...posts, allPosts:updateBookmark,};
+              
+            case "SORT":
+                return {...posts,allPosts:payload};   
+            
+            case "TOGGLE_SORT":
+                return {...posts,sortByDate:payload};
      
             default:
                 return posts;    
@@ -48,12 +54,32 @@ export const PostProvider=({children})=>
 
     const initialState= {
         allPosts:postDb.posts,
+        sortByDate:true,
     }
 
     const [state,dispatch]=useReducer(PostReducer,initialState);
 
+    const sortPosts=()=>
+    {
+        const {allPosts,sortByDate}=state;
+        if(sortByDate)
+        {
+            
+            const sortedPosts = [...allPosts].sort(
+                (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
+            );
+                
+        return sortedPosts;
+
+        }
+        else {
+            const sortedPosts=[...allPosts].sort((a,b)=>b.upvotes - a.upvotes);
+            return sortedPosts;
+        }
+    }
+
     return (
-        <PostContext.Provider value={{state,dispatch}}>
+        <PostContext.Provider value={{state,dispatch, sortPosts}}>
             {children}
         </PostContext.Provider>
     )
