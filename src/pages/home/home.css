@@ -1,0 +1,13 @@
+.home-container {
+    display: flex;
+}
+.list-item-container {
+    list-style: none;
+    width: 50vw;
+    margin: 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+.home-container ul {
+    overflow-y: auto;
+}
