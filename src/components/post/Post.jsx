@@ -1,18 +1,23 @@
 import "./post.css";
+import { useContext } from "react";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faArrowDown, faComment, faShareNodes,faBookmark } from '@fortawesome/free-solid-svg-icons'
 
+import { PostContext } from "../../context/PostContext";
 
 export const Post=({post})=>
 {
+    const {state,dispatch}=useContext(PostContext);
+    // const {upvote,downvote}=state;
+    
     return (
         <div className="individual-post-container">
         
             <div className="vote-container">
-            <FontAwesomeIcon icon={faArrowUp} className="vote-item upvote"/>
-            <span className="vote-item">{post?.upvotes - post?.downvotes}</span>
-            <FontAwesomeIcon icon={faArrowDown} className="vote-item downvote"/>
+            <FontAwesomeIcon style={post?.upvote?{color:"green"}:{color:""}} icon={faArrowUp} className="vote-item upvote" onClick={()=>dispatch({type:"UPVOTE",payload:post?.postId})}/>
+            <span className="vote-item">{(post?.upvotes )- (post?.downvotes)}</span>
+            <FontAwesomeIcon style={post?.downvote?{color:"red"}:{color:""}} icon={faArrowDown} className="vote-item downvote" onClick={()=>dispatch({type:"DOWNVOTE",payload:post?.postId})}/>
             </div>
 
             <header className="post-profile-header">
