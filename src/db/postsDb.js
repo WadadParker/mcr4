@@ -19,6 +19,7 @@ export const postDb = {
         comments: [
           {
             commentId: '89898-856-87576',
+            name:"Ashwin Khode",
             username: 'ashwin4real',
             picUrl: 'http://bit.ly/42Zm7tM',
             likes: 0,

@@ -13,7 +13,7 @@ function App() {
       </nav>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path="/post/:postId" element={<CommentPage />} />
+        <Route path="/post/:postID" element={<CommentPage />} />
       </Routes>
     </div>
   );

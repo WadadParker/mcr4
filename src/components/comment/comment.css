@@ -1,0 +1,26 @@
+.individual-comment-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    place-content: start;
+    place-items: start;
+}
+.comment-pfp {
+    grid-row: 1 / -5;
+    margin: 0.2rem 1rem;
+}
+.individual-comment-container p {
+    margin: 0;
+}
+.small-comment {
+    justify-self: start;
+    margin-right:auto ;
+    
+}
+.comment-content {
+    padding: 0.5rem;
+    font-size: 1.4rem;
+}
+.comment-footer {
+    margin-right: 1rem;
+    margin-top: 1rem;
+}

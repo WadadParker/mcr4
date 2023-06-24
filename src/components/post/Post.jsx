@@ -1,5 +1,6 @@
 import "./post.css";
 import { useContext } from "react";
+import {useNavigate} from "react-router-dom";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faArrowDown, faComment, faShareNodes,faBookmark } from '@fortawesome/free-solid-svg-icons'
@@ -9,7 +10,7 @@ import { PostContext } from "../../context/PostContext";
 export const Post=({post})=>
 {
     const {state,dispatch}=useContext(PostContext);
-    // const {upvote,downvote}=state;
+    const navigate=useNavigate();
     
     return (
         <div className="individual-post-container">
@@ -35,7 +36,7 @@ export const Post=({post})=>
 
             <footer className="post-footer">
                 <div className="like-comment-share">
-                    <FontAwesomeIcon icon={faComment} />
+                    <FontAwesomeIcon icon={faComment} onClick={()=>navigate(`/post/${post?.postId}`)}/>
                     <FontAwesomeIcon icon={faShareNodes} />
                     <FontAwesomeIcon icon={faBookmark} style={post?.isBookmarked?{color:"#ef14ef"}:{color:""}} onClick={()=>dispatch({type:"BOOKMARK",payload:post?.postId})}/>
                 </div>
