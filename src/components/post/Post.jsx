@@ -37,7 +37,7 @@ export const Post=({post})=>
                 <div className="like-comment-share">
                     <FontAwesomeIcon icon={faComment} />
                     <FontAwesomeIcon icon={faShareNodes} />
-                    <FontAwesomeIcon icon={faBookmark} />
+                    <FontAwesomeIcon icon={faBookmark} style={post?.isBookmarked?{color:"#ef14ef"}:{color:""}} onClick={()=>dispatch({type:"BOOKMARK",payload:post?.postId})}/>
                 </div>
             </footer>
         </div>

@@ -32,7 +32,14 @@ export const PostProvider=({children})=>
                 return {...posts, allPosts:updateDownvote,};
              
             case "BOOKMARK":
-
+                const updateBookmark=allPosts.map(item=>{
+                    if(item.postId==payload)
+                    {
+                        return {...item,isBookmarked:!item.isBookmarked};
+                    }
+                    return item;
+                })
+                return {...posts, allPosts:updateBookmark,};
      
             default:
                 return posts;    
